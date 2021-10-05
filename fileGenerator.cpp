@@ -10,7 +10,7 @@ int main() {
     int x;
     for (x = 1; x < 11; x++) {
         ofstream outfile(string("Sensors") + to_string(x) + ".txt");
-        sleep(1);
+        Sleep(1);
         for (i = 1; i < 237; i++) {
             if (x == 1){
                 outfile << i << ":false;";

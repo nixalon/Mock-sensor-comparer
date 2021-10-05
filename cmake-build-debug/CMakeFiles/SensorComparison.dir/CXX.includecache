@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Alexandra/CLionProjects/SensorComparison/fileReader.cpp
+C:/Users/nickl/Documents/GitHub/Mock-sensor-comparer/fileReader.cpp
 iostream
 -
 fstream
 -
 string
+-
+array
 -
 

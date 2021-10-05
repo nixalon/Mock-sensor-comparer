@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Alexandra/CLionProjects/SensorComparison/fileReader.cpp" "C:/Users/Alexandra/CLionProjects/SensorComparison/cmake-build-debug/CMakeFiles/SensorComparison.dir/fileReader.cpp.obj"
+  "C:/Users/nickl/Documents/GitHub/Mock-sensor-comparer/fileReader.cpp" "C:/Users/nickl/Documents/GitHub/Mock-sensor-comparer/cmake-build-debug/CMakeFiles/SensorComparison.dir/fileReader.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

@@ -1,10 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
-void compareSensorData(bool *sensorData, int fileNumber);
+#include <array>
 
 using namespace std;
+
+void compareSensorData(array<bool, 236> sensorData, int fileNumber);
 
 string getFileName(int i){
     string fileName = string("Sensors") + to_string(i) + ".txt";
@@ -13,9 +14,10 @@ string getFileName(int i){
 
 void readFile(){
     string line;
-    auto sensorData = new bool[236];
     int fileNumber = 1;
     while(fileNumber < 11){
+        //auto sensorData = new bool[236];
+        array<bool, 236> sensorData{};
         ifstream myFile(getFileName(fileNumber));
         if (myFile.is_open()) {
             while (getline(myFile, line, ';')) {
@@ -31,13 +33,18 @@ void readFile(){
     }
 }
 
-void compareSensorData(bool *currentSensorData, int fileNumber) {
-    bool* lastSensorData;
+void compareSensorData(array<bool, 236> currentSensorData, int fileNumber) {
+    static array<bool, 236> lastSensorData;
     if(fileNumber == 1){
         lastSensorData = currentSensorData;
     }
     if(fileNumber >= 2){
-
+        int sensorIndex;
+        for(sensorIndex = 0; sensorIndex < 236; sensorIndex++)
+            if(lastSensorData[sensorIndex] != currentSensorData[sensorIndex]){
+                cout << "WARNING!! NO NEED TO PANIC BUT SENSOR NUMBER " << sensorIndex << " HAS CHANGED IT'S VALUE TO " << currentSensorData[sensorIndex] << endl;
+            }
+        lastSensorData = currentSensorData;
     }
 }
 
